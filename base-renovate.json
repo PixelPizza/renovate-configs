@@ -1,0 +1,6 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:base", "helpers:pinGitHubActionDigests", "group:allNonMajor", "schedule:weekends"],
+	"labels": ["Meta: Dependencies"],
+	"reviewers": ["JaronZ"]
+}
