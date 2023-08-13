@@ -1,0 +1,33 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["github>PixelPizza/renovate-configs:base-renovate", "schedule:daily", "schedule:automergeDaily"],
+	"npm": {
+		"rangeStrategy": "bump",
+		"packageRules": [
+			{
+				"matchUpdateTypes": ["minor", "patch"],
+				"matchCurrentVersion": "!/^0/",
+				"automerge": true
+			},
+			{
+				"matchPackagePatterns": ["@sapphire"],
+				"groupName": "Sapphire Dependencies",
+				"automerge": true
+			},
+			{
+				"matchPackagePatterns": ["@discordjs", "^discord.js", "discord-api-types"],
+				"groupName": "Discord.JS Dependencies",
+				"automerge": true
+			},
+			{
+				"matchPackageNames": ["prettier", "eslint-plugin-prettier"],
+				"groupName": "Prettier Depencencies",
+				"automerge": true
+			},
+			{
+				"matchDepTypes": ["engines"],
+				"enabled": false
+			}
+		]
+	}
+}
